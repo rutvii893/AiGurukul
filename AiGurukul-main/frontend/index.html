@@ -1233,6 +1233,9 @@
     </div>
   </div>
 
+  <!-- ── Translation ─────────────────────────────────────── -->
+  <div id="screen-translation" class="screen" style="overflow-y:auto;"></div>
+
   <script type="module">
     import { state, actions, subscribe, getLevelName } from './src/hooks/useGurukul.js';
     import { renderLanding } from './src/components/LandingPage.js';
@@ -1244,6 +1247,7 @@
     import { renderXPBar, updateXPBar, showLevelUpToast } from './src/components/XPSystem.js';
     import { renderKnowledgeGraphPage } from './src/components/KnowledgeGraph.js';
     import { renderLearn } from './src/components/Learn.js';
+    import { renderTranslationPage } from './src/components/TranslationPage.js';
 
     const screens = {
       landing: document.getElementById('screen-landing'),
@@ -1252,6 +1256,7 @@
       response: document.getElementById('screen-response'),
       learn: document.getElementById('screen-learn'),
       knowledgeGraph: document.getElementById('screen-knowledge-graph'),
+      translate: document.getElementById('screen-translation'),
     };
 
     let prevLevel = 0;
@@ -1319,6 +1324,10 @@
 
         case 'learn':
           renderLearn(screens.learn, () => actions.goTo('landing'));
+          break;
+
+        case 'translate':
+          renderTranslationPage(screens.translate);
           break;
       }
 

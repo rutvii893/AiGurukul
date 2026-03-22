@@ -62,6 +62,12 @@ export function renderLanding(container) {
           <span class="mode-title">Knowledge Graph</span>
           <span class="mode-desc">Explore the interactive map of India's knowledge traditions and their connections.</span>
         </button>
+
+        <button class="mode-card" id="btn-translate">
+          <span class="mode-icon">📜</span>
+          <span class="mode-title">Manuscript Translator</span>
+          <span class="mode-desc">Translate and analyze ancient Sanskrit, Tamil &amp; Pali texts with AI insights.</span>
+        </button>
       </div>
     </div>
   `;
@@ -69,4 +75,5 @@ export function renderLanding(container) {
   container.querySelector('#btn-solve').addEventListener('click', () => actions.goTo('persona'));
   container.querySelector('#btn-learn').addEventListener('click', () => actions.goTo('learn'));
   container.querySelector('#btn-graph').addEventListener('click', () => actions.goTo('knowledgeGraph'));
+  container.querySelector('#btn-translate').addEventListener('click', () => actions.goTo('translate'));
 }
