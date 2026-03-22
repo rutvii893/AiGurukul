@@ -43,8 +43,8 @@ export function renderProblemInput(container) {
     </div>
 
     <div class="problem-body">
-      <h2 class="anim-fade-up">Share your situation</h2>
-      <p class="anim-fade-up delay-1">Be as open as you like — the guru listens without judgment.</p>
+      <h2 class="anim-fade-up">What would you like guidance on?</h2>
+      <p class="anim-fade-up delay-1">Your guru ${state.persona ? '<strong style="color:var(--gold)">' + state.persona.charAt(0).toUpperCase() + state.persona.slice(1) + '</strong>' : ''} is listening. Be as open as you like.</p>
 
       <textarea
         class="textarea anim-fade-up delay-2"
@@ -104,10 +104,10 @@ export function renderProblemInput(container) {
       return;
     }
     actions.setProblem(val);
-    actions.goTo('persona');
+    actions.selectPersona(state.persona);
   });
 
-  container.querySelector('#back-btn').addEventListener('click', () => actions.goTo('landing'));
+  container.querySelector('#back-btn').addEventListener('click', () => actions.goTo('persona'));
 
   // Auto focus
   setTimeout(() => textarea.focus(), 100);

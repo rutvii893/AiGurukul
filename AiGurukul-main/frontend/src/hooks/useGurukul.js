@@ -111,7 +111,18 @@ export const actions = {
     }
   },
 
-  /** Switch to a different persona — contrasting perspective */
+  /** Just store the persona choice — don't fetch wisdom yet (used when picking guru before entering problem) */
+  selectPersonaOnly(persona) {
+    state.persona = persona;
+    state.previousPersona = '';
+    state.chatHistory = [];
+    state.quizData = null;
+    state.wisdom = null;
+    state.error = null;
+    notify();
+  },
+
+  /** Set the problem text */
   async switchPersona(newPersona) {
     if (newPersona === state.persona) return;
 

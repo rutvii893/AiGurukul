@@ -57,16 +57,16 @@ export function renderLanding(container) {
           <span class="mode-desc">Tell us what's bothering you. Get ancient wisdom + modern action steps.</span>
         </button>
 
-        <button class="mode-card" id="btn-chat">
-          <span class="mode-icon">💬</span>
-          <span class="mode-title">Chat with Guru</span>
-          <span class="mode-desc">Have a conversation with a wise persona and get personalised guidance.</span>
+        <button class="mode-card" id="btn-graph">
+          <span class="mode-icon">🕸️</span>
+          <span class="mode-title">Knowledge Graph</span>
+          <span class="mode-desc">Explore the interactive map of India's knowledge traditions and their connections.</span>
         </button>
       </div>
     </div>
   `;
 
-  container.querySelector('#btn-solve').addEventListener('click', () => actions.goTo('problem'));
-  container.querySelector('#btn-chat').addEventListener('click',  () => actions.goTo('problem'));
+  container.querySelector('#btn-solve').addEventListener('click', () => actions.goTo('persona'));
   container.querySelector('#btn-learn').addEventListener('click', () => actions.goTo('learn'));
+  container.querySelector('#btn-graph').addEventListener('click', () => actions.goTo('knowledgeGraph'));
 }

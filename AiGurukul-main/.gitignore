@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment variables — never commit API keys
+backend/.env
+.env
+
+# Build outputs
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Temp files
+*.new

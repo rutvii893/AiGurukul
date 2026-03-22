@@ -55,11 +55,6 @@ export function renderPersonaSelect(container) {
         Same wisdom, different lenses. Choose the perspective that resonates.
       </p>
 
-      <div class="problem-preview anim-fade-up delay-2">
-        <span class="problem-preview-label">Your question</span>
-        <span class="problem-preview-text">"${escapeHtml(state.problem)}"</span>
-      </div>
-
       <div class="persona-grid">
         ${Object.entries(personas).map(([key, p], i) => `
           <button
@@ -92,11 +87,14 @@ export function renderPersonaSelect(container) {
       container.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
       const persona = card.dataset.persona;
-      setTimeout(() => actions.selectPersona(persona), 280);
+      setTimeout(() => {
+        actions.selectPersonaOnly(persona);
+        actions.goTo('problem');
+      }, 280);
     });
   });
 
-  container.querySelector('#back-btn').addEventListener('click', () => actions.goTo('problem'));
+  container.querySelector('#back-btn').addEventListener('click', () => actions.goTo('landing'));
 }
 
 function escapeHtml(str) {
